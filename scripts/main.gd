@@ -39,6 +39,7 @@ func instantiatePaddles() -> void:
 
 func instantiatePaddle(Paddle : PackedScene) -> Node:
 	var paddle : Node = Paddle.instance()
+	paddle.add_to_group("Paddles")
 	add_child(paddle)
 	return paddle
 
