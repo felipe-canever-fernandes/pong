@@ -24,18 +24,15 @@ func instantiateBall() -> void:
 	add_child(ball)
 
 func instantiatePaddles() -> void:
+	Paddles.shuffle()
+	
 	var paddles_positions : Array = [
 		Vector2(get_viewport().size.x / 4, 8),
 		Vector2(get_viewport().size.x / 4, get_viewport().size.y / 2 - 8)]
-		
-	paddles_positions.shuffle()
 	
 	for i in range(2):
 		paddles.append(instantiatePaddle(Paddles[i]))
 		paddles[i].position = paddles_positions[i]
-		
-		if paddles[i].type == "CPU":
-			paddles
 
 func instantiatePaddle(Paddle : PackedScene) -> Node:
 	var paddle : Node = Paddle.instance()
