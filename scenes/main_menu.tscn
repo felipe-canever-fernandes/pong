@@ -9,6 +9,7 @@ anchor_bottom = 1.0
 theme = ExtResource( 1 )
 script = ExtResource( 2 )
 level = "res://scenes/main.tscn"
+about_menu = "res://scenes/about_menu.tscn"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
@@ -21,9 +22,9 @@ anchor_bottom = 1.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
 margin_left = 56.0
-margin_top = 113.0
+margin_top = 100.0
 margin_right = 104.0
-margin_bottom = 207.0
+margin_bottom = 220.0
 
 [node name="TitleLabel" type="Label" parent="CenterContainer/VBoxContainer"]
 margin_right = 48.0
@@ -45,10 +46,17 @@ margin_bottom = 68.0
 disabled = true
 text = "Options"
 
-[node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="AboutButton" type="Button" parent="CenterContainer/VBoxContainer"]
 margin_top = 72.0
 margin_right = 48.0
 margin_bottom = 94.0
+text = "About"
+
+[node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer"]
+margin_top = 98.0
+margin_right = 48.0
+margin_bottom = 120.0
 text = "Quit"
 [connection signal="pressed" from="CenterContainer/VBoxContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/AboutButton" to="." method="_on_AboutButton_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
