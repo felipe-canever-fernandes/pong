@@ -9,10 +9,7 @@ var random : RandomNumberGenerator
 func _ready() -> void:
 	random = RandomNumberGenerator.new()
 	random.randomize()
-	reset()
-
-func reset() -> void:
-	position = get_viewport().size / 4
+	
 	maximum_speed = initial_speed
 	
 	var x_direction : int = -1 if random.randi_range(0, 1) == 0 else 1
