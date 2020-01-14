@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/ball.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/cpu.tscn" type="PackedScene" id=4]
-[ext_resource path="res://sprites/background.png" type="Texture" id=5]
 
 [sub_resource type="LineShape2D" id=1]
 normal = Vector2( 0, 1 )
@@ -22,10 +21,10 @@ script = ExtResource( 1 )
 Ball = ExtResource( 2 )
 Paddles = [ ExtResource( 3 ), ExtResource( 4 ) ]
 
-[node name="Background" type="Sprite" parent="."]
-position = Vector2( 0, -0.568802 )
-texture = ExtResource( 5 )
-centered = false
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 160.0
+margin_bottom = 320.0
+color = Color( 0, 0, 0, 1 )
 
 [node name="Walls" type="Node2D" parent="."]
 editor/display_folded = true
