@@ -49,6 +49,6 @@ text = "Options"
 margin_top = 72.0
 margin_right = 48.0
 margin_bottom = 94.0
-disabled = true
 text = "Quit"
 [connection signal="pressed" from="CenterContainer/VBoxContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
