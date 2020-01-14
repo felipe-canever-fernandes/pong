@@ -13,5 +13,11 @@ speed = 128
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 
+[node name="Color" type="ColorRect" parent="."]
+margin_left = -15.0
+margin_top = -3.0
+margin_right = 15.0
+margin_bottom = 3.0
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
