@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://resources/theme.tres" type="Theme" id=1]
+[ext_resource path="res://scripts/main_menu.gd" type="Script" id=2]
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+level = "res://scenes/main.tscn"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 56.0
+margin_top = 113.0
+margin_right = 104.0
+margin_bottom = 207.0
+
+[node name="TitleLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_right = 48.0
+margin_bottom = 16.0
+text = "PONG"
+align = 1
+valign = 1
+
+[node name="PlayButton" type="Button" parent="CenterContainer/VBoxContainer"]
+margin_top = 20.0
+margin_right = 48.0
+margin_bottom = 42.0
+text = "Play"
+
+[node name="OptionsButton" type="Button" parent="CenterContainer/VBoxContainer"]
+margin_top = 46.0
+margin_right = 48.0
+margin_bottom = 68.0
+disabled = true
+text = "Options"
+
+[node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer"]
+margin_top = 72.0
+margin_right = 48.0
+margin_bottom = 94.0
+disabled = true
+text = "Quit"
+[connection signal="pressed" from="CenterContainer/VBoxContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
