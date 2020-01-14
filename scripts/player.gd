@@ -1,5 +1,8 @@
 extends "res://scripts/paddle.gd"
 
+func _ready():
+	type = "Player"
+
 func process_motion() -> void:
 	if Input.is_action_pressed("ui_left"):
 		motion.x = -speed

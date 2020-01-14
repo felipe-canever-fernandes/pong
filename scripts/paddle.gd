@@ -2,6 +2,8 @@ extends KinematicBody2D
 
 export(int) var speed : int
 
+var type : String = ""
+
 var points : int = 0
 var motion : Vector2 = Vector2.ZERO
 

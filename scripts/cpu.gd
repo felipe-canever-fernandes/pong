@@ -8,6 +8,8 @@ export(float, 0, 1) var difficulty : float = 0.5
 func _ready():
 	random = RandomNumberGenerator.new()
 	random.randomize()
+	
+	type = "CPU"
 
 func process_motion() -> void:
 	if sign(position.y - get_viewport().size.y / 4) != sign(ball.linear_velocity.y):
