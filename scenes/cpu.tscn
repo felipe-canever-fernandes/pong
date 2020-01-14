@@ -6,5 +6,8 @@
 [node name="Paddle" index="0" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
-[node name="Color" parent="." index="2"]
-color = Color( 1, 0.709804, 0.709804, 1 )
+[node name="Color" parent="Control" index="0"]
+color = Color( 0.423529, 0, 0.168627, 1 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+visible = false

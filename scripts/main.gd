@@ -52,8 +52,6 @@ func _on_Ball_body_entered(body : PhysicsBody2D) -> void:
 		
 		ball.queue_free()
 		instantiateBall()
-		
-		$PointsLabel.text = "%s - %s" % [paddles[0].points, paddles[1].points]
 	elif body.is_in_group("Paddles"):
 		ball.maximum_speed *= 1.05
 		ball.direction = sign(body.motion.x)

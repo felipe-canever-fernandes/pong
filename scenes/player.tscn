@@ -6,5 +6,5 @@
 [node name="Paddle" index="0" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
-[node name="Color" parent="." index="1"]
-color = Color( 0.777344, 0.989563, 1, 1 )
+[node name="Color" parent="Control" index="0"]
+color = Color( 0, 0.305882, 0.305882, 1 )

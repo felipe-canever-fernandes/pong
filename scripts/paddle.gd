@@ -4,7 +4,7 @@ export(int) var speed : int
 
 var type : String = ""
 
-var points : int = 0
+var points : int = 0 setget set_points
 var motion : Vector2 = Vector2.ZERO
 
 func _physics_process(delta : float):
@@ -13,3 +13,7 @@ func _physics_process(delta : float):
 
 func process_motion() -> void:
 	pass
+
+func set_points(value : int):
+	points = value
+	$Control/PointsLabel.text = str(points)
