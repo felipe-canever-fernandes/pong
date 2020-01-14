@@ -17,15 +17,16 @@ func instantiateBall() -> void:
 func _on_Ball_body_entered(body : PhysicsBody2D) -> void:
 	if body.is_in_group("PaddlesWalls"):
 		if body.name == "TopWall":
-			$Enemy.points += 1
+			print("TODO: Update enemy points.")
+			#$Enemy.points += 1
 		elif body.name == "BottomWall":
 			$Player.points += 1
 		
 		ball.queue_free()
-		
 		instantiateBall()
+		
+		print("TODO: Update points label.")
+		#$PointsLabel.text = "%s - %s" % [$Player.points, $Enemy.points]
 	elif body.is_in_group("Paddles"):
 		ball.maximum_speed *= 1.05
 		ball.direction = sign(body.motion.x)
-	
-	$PointsLabel.text = "%s - %s" % [$Player.points, $Enemy.points]

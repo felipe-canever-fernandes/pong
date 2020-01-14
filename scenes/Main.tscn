@@ -3,8 +3,8 @@
 [ext_resource path="res://scripts/main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/ball.tscn" type="PackedScene" id=2]
 [ext_resource path="res://sprites/background.png" type="Texture" id=3]
-[ext_resource path="res://scenes/paddle.tscn" type="PackedScene" id=4]
-[ext_resource path="res://resources/theme.tres" type="Theme" id=5]
+[ext_resource path="res://resources/theme.tres" type="Theme" id=4]
+[ext_resource path="res://scenes/player.tscn" type="PackedScene" id=5]
 
 [sub_resource type="LineShape2D" id=1]
 normal = Vector2( 0, 1 )
@@ -68,22 +68,16 @@ shape = SubResource( 3 )
 position = Vector2( 160, 160 )
 shape = SubResource( 4 )
 
-[node name="Player" parent="." groups=[
-"Paddles",
-] instance=ExtResource( 4 )]
-position = Vector2( 80, 6 )
-
-[node name="Enemy" parent="." groups=[
-"Paddles",
-] instance=ExtResource( 4 )]
-position = Vector2( 80, 314 )
-
 [node name="PointsLabel" type="Label" parent="."]
 margin_left = 2.0
 margin_top = 2.0
 margin_right = 2.0
 margin_bottom = 2.0
-theme = ExtResource( 5 )
+theme = ExtResource( 4 )
 text = "0 - 0"
 align = 1
 valign = 1
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
+position = Vector2( 80, 7 )
+speed = 128
