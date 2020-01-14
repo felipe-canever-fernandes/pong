@@ -16,4 +16,4 @@ func process_motion() -> void:
 
 func set_points(value : int):
 	points = value
-	$Control/PointsLabel.text = str(points)
+	$PointsLabel.text = str(points)
