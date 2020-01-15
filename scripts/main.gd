@@ -1,5 +1,6 @@
 extends Node2D
 
+export(String, FILE, "*.tscn") var main_menu : String = ""
 export(PackedScene) var Ball : PackedScene
 export(Array, PackedScene) var Paddles : Array
 
@@ -13,6 +14,9 @@ func _ready() -> void:
 	instantiateBall()
 
 func _physics_process(delta) -> void:
+	if paddles[0].points >= 11 or paddles[1].points >= 11:
+		end()
+	
 	var has_scored : bool = false
 	
 	if ball.position.y < paddles[0].position.y + paddles[0].size.y / 2:
@@ -85,3 +89,6 @@ func _on_Ball_body_entered(body : PhysicsBody2D) -> void:
 		angle *= sign(ball.linear_velocity.y)
 		
 		ball.angle = angle
+	
+func end() -> void:
+	get_tree().change_scene(main_menu)
