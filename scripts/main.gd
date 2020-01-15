@@ -11,6 +11,20 @@ func _ready() -> void:
 	instantiatePaddles()
 	instantiateBall()
 
+func _physics_process(delta) -> void:
+	var has_scored : bool = false
+	
+	if ball.position.y < paddles[0].position.y + paddles[0].size.y / 2:
+		paddles[1].points += 1
+		has_scored = true
+	elif ball.position.y > paddles[1].position.y - paddles[0].size.y / 2:
+		paddles[0].points += 1
+		has_scored = true
+	
+	if has_scored:
+		ball.queue_free()
+		instantiateBall()
+
 func instantiateBall() -> void:
 	ball = Ball.instance()
 	
@@ -26,13 +40,14 @@ func instantiateBall() -> void:
 func instantiatePaddles() -> void:
 	Paddles.shuffle()
 	
-	var paddles_positions : Array = [
-		Vector2(get_viewport().size.x / 4, 8),
-		Vector2(get_viewport().size.x / 4, get_viewport().size.y / 2 - 8)]
-	
 	for i in range(2):
 		paddles.append(instantiatePaddle(Paddles[i]))
-		paddles[i].position = paddles_positions[i]
+		
+	paddles[0].position.x = get_viewport().size.x / 4
+	paddles[0].position.y = paddles[0].size.y
+	
+	paddles[1].position.x = get_viewport().size.x / 4
+	paddles[1].position.y = get_viewport().size.y / 2 - paddles[1].size.y
 
 func instantiatePaddle(Paddle : PackedScene) -> Node:
 	var paddle : Node = Paddle.instance()
@@ -41,14 +56,6 @@ func instantiatePaddle(Paddle : PackedScene) -> Node:
 	return paddle
 
 func _on_Ball_body_entered(body : PhysicsBody2D) -> void:
-	if body.is_in_group("PaddlesWalls"):
-		if body.name == "TopWall":
-			paddles[1].points += 1
-		elif body.name == "BottomWall":
-			paddles[0].points += 1
-		
-		ball.queue_free()
-		instantiateBall()
-	elif body.is_in_group("Paddles"):
+	if body.is_in_group("Paddles"):
 		ball.maximum_speed *= 1.05
 		ball.direction = sign(body.motion.x)
