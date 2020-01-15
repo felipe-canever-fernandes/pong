@@ -72,4 +72,11 @@ func draw_dotted_line(y : float, index : int, flip_y : bool) -> void:
 func _on_Ball_body_entered(body : PhysicsBody2D) -> void:
 	if body.is_in_group("Paddles"):
 		ball.maximum_speed *= 1.05
-		ball.direction = sign(body.motion.x)
+		
+		var distance : float = abs(ball.position.x - body.position.x)	
+		var angle : float = lerp(0, -PI / 4 * ball.direction, distance / (body.size.x / 2))
+		
+		angle += PI / 2
+		angle *= sign(ball.linear_velocity.y)
+		
+		ball.angle = angle
