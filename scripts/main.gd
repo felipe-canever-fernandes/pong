@@ -9,6 +9,7 @@ var paddles : Array = []
 func _ready() -> void:
 	randomize()
 	instantiatePaddles()
+	draw_dotted_lines()
 	instantiateBall()
 
 func _physics_process(delta) -> void:
@@ -54,6 +55,17 @@ func instantiatePaddle(Paddle : PackedScene) -> Node:
 	paddle.add_to_group("Paddles")
 	add_child(paddle)
 	return paddle
+
+func draw_dotted_lines() -> void:
+	draw_dotted_line(paddles[0].position.y, false)
+	draw_dotted_line(paddles[1].position.y, true)
+
+func draw_dotted_line(y : float, flip_y : bool) -> void:
+	var width : int = $DottedLines.cell_size.x
+	
+	for i in range(int(get_viewport().size.x / 2 / width)):
+		var x : float = i * width
+		$DottedLines.set_cellv($DottedLines.world_to_map(Vector2(x, y)), 0, false, flip_y)
 
 func _on_Ball_body_entered(body : PhysicsBody2D) -> void:
 	if body.is_in_group("Paddles"):
