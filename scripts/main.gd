@@ -57,15 +57,17 @@ func instantiatePaddle(Paddle : PackedScene) -> Node:
 	return paddle
 
 func draw_dotted_lines() -> void:
-	draw_dotted_line(paddles[0].position.y, false)
-	draw_dotted_line(paddles[1].position.y, true)
+	draw_dotted_line(paddles[0].position.y, 0, false)
+	draw_dotted_line(paddles[1].position.y, 0, true)
+	
+	draw_dotted_line(get_viewport().size.y / 4, 1, false)
 
-func draw_dotted_line(y : float, flip_y : bool) -> void:
+func draw_dotted_line(y : float, index : int, flip_y : bool) -> void:
 	var width : int = $DottedLines.cell_size.x
 	
 	for i in range(int(get_viewport().size.x / 2 / width)):
 		var x : float = i * width
-		$DottedLines.set_cellv($DottedLines.world_to_map(Vector2(x, y)), 0, false, flip_y)
+		$DottedLines.set_cellv($DottedLines.world_to_map(Vector2(x, y)), index, false, flip_y)
 
 func _on_Ball_body_entered(body : PhysicsBody2D) -> void:
 	if body.is_in_group("Paddles"):
