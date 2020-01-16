@@ -21,23 +21,27 @@ anchor_bottom = 1.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
 margin_left = 17.0
-margin_top = 110.0
+margin_top = 73.0
 margin_right = 143.0
-margin_bottom = 209.0
+margin_bottom = 246.0
 
 [node name="AboutLabel" type="Label" parent="CenterContainer/VBoxContainer"]
 margin_right = 126.0
-margin_bottom = 73.0
-text = "Made by:
+margin_bottom = 149.0
+text = "PONG v. 1.0
+
+by
 Felipe Canever Fernandes
-Using:
-Godot Engine"
+
+using
+Godot Engine
+"
 align = 1
 valign = 1
 
 [node name="MainMenuButton" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 77.0
+margin_top = 153.0
 margin_right = 126.0
-margin_bottom = 99.0
+margin_bottom = 173.0
 text = "Main Menu"
 [connection signal="pressed" from="CenterContainer/VBoxContainer/MainMenuButton" to="." method="_on_MainMenuButton_pressed"]
