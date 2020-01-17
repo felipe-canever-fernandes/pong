@@ -78,7 +78,7 @@ func draw_dotted_line(y : float, index : int, flip_y : bool) -> void:
 func _on_Ball_body_entered(body : PhysicsBody2D) -> void:
 	if body.is_in_group("Paddles"):
 		var direction : Vector2 = (ball.position - body.anchor).normalized()
-		ball.linear_velocity = ball.maximum_speed * direction
+		ball.linear_velocity = (ball.speed + ball.SPEEDUP) * direction
 	
 func end() -> void:
 	get_tree().change_scene(main_menu)
