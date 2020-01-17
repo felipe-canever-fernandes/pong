@@ -3,6 +3,9 @@ extends Control
 export(String, FILE, "*.tscn") var level : String = ""
 export(String, FILE, "*.tscn") var about_menu : String = ""
 
+func _ready() -> void:
+	get_tree().paused = false
+
 func _on_PlayButton_pressed():
 	get_tree().change_scene(level)
 
