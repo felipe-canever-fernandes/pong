@@ -21,10 +21,10 @@ func get_anchor() -> Vector2:
 	return Vector2(x, y)
 
 func _physics_process(delta : float):
-	process_motion()
+	_process_motion(delta)
 	motion = move_and_slide(motion)
 
-func process_motion() -> void:
+func _process_motion(delta : float) -> void:
 	pass
 
 func set_points(value : int):

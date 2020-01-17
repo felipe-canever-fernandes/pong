@@ -3,28 +3,26 @@ extends "res://scripts/paddle.gd"
 var random : RandomNumberGenerator
 var ball : Node = null
 
-export(float, 0, 1) var difficulty : float = 0.5
-
 func _ready():
 	random = RandomNumberGenerator.new()
 	random.randomize()
 	
 	type = "CPU"
 
-func process_motion() -> void:
+func _process_motion(delta : float) -> void:
 	if sign(position.y - get_viewport().size.y / 4) != sign(ball.linear_velocity.y):
-		motion.x = 0
-		return
-	
-	if random.randf_range(0, 1) > difficulty:
-		motion.x = 0
+		motion.x = lerp(motion.x, 0, 0.1)
 		return
 	
 	var x : float = position.x
 	var ball_x : float = ball.position.x
 	
-	if x < ball_x:
-		motion.x = speed
-	elif x > ball_x:
-		motion.x = -speed
+	var offset : float = 2 * random.randf_range(-size.y / 2, size.y / 2)
+	
+	var target : float = ball_x + offset
+	
+	if x < target:
+		motion.x = lerp(motion.x, speed, 0.2)
+	elif x > target:
+		motion.x = lerp(motion.x, -speed, 0.2)
 	
