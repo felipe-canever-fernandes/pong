@@ -31,6 +31,7 @@ func _physics_process(delta) -> void:
 		has_scored = true
 	
 	if has_scored:
+		ball.get_node("ScoreSound").play()
 		ball.queue_free()
 		instantiateBall()
 
@@ -81,6 +82,7 @@ func draw_dotted_line(y : float, index : int, flip_y : bool) -> void:
 
 func _on_Ball_body_entered(body : PhysicsBody2D) -> void:
 	if body.is_in_group("Paddles"):
+		ball.get_node("BounceSound").play()
 		var direction : Vector2 = (ball.position - body.anchor).normalized()
 		ball.linear_velocity = (ball.speed + ball.SPEEDUP) * direction
 	

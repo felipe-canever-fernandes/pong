@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/ball.gd" type="Script" id=1]
 [ext_resource path="res://sprites/ball.png" type="Texture" id=2]
+[ext_resource path="res://sounds/bounce.wav" type="AudioStream" id=3]
+[ext_resource path="res://sounds/score.wav" type="AudioStream" id=4]
 
 [sub_resource type="PhysicsMaterial" id=1]
 friction = 0.0
@@ -18,7 +20,6 @@ contacts_reported = 2
 contact_monitor = true
 linear_damp = 0.0
 script = ExtResource( 1 )
-initial_speed = 128.0
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
@@ -26,3 +27,9 @@ texture = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 shape = SubResource( 2 )
+
+[node name="BounceSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="ScoreSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
