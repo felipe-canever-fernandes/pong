@@ -16,7 +16,7 @@ var anchor : Vector2 = Vector2.ZERO setget , get_anchor
 
 func get_anchor() -> Vector2:
 	var x : float = position.x
-	var y : float = position.y + x / tan(PI / 4) * placement
+	var y : float = position.y + ((size.x / 2) / tan(PI / 4)) * placement
 	
 	return Vector2(x, y)
 
