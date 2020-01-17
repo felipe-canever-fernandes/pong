@@ -4,7 +4,7 @@ export(String, FILE, "*.tscn") var main_menu : String = ""
 export(PackedScene) var Ball : PackedScene
 export(Array, PackedScene) var Paddles : Array
 
-const MAXIMUM_POINTS : int = 2
+const MAXIMUM_POINTS : int = 11
 
 var ball : Node
 var paddles : Array = []
