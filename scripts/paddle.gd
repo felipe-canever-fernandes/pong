@@ -20,6 +20,7 @@ func get_anchor() -> Vector2:
 	
 	return Vector2(x, y)
 
+
 func _physics_process(delta : float):
 	_process_motion(delta)
 	motion = move_and_slide(motion)
@@ -33,3 +34,7 @@ func set_points(value : int):
 
 func get_size() -> Vector2:
 	return $Sprite.texture.get_size()
+
+func _on_LabelsTimer_timeout() -> void:
+	$TypeLabel.visible = false
+	$PointsLabel.visible = true

@@ -5,3 +5,6 @@
 
 [node name="Paddle" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+
+[node name="TypeLabel" parent="." index="2"]
+text = "Player"
