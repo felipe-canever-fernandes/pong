@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-const INITIAL_SPEED : float = 100.0
+const INITIAL_SPEED : float = 120.0
 var SPEEDUP : float = 10.0
 
 var speed : float = 0.0 setget , get_speed
