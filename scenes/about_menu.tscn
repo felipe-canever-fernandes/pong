@@ -28,7 +28,7 @@ margin_bottom = 246.0
 [node name="AboutLabel" type="Label" parent="CenterContainer/VBoxContainer"]
 margin_right = 126.0
 margin_bottom = 149.0
-text = "PONG v. 1.0
+text = "PONG Beta 1
 
 by
 Felipe Canever Fernandes

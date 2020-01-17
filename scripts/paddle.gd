@@ -9,6 +9,17 @@ var motion : Vector2 = Vector2.ZERO
 
 var size : Vector2 setget , get_size
 
+enum Placement {NONE = 0, TOP = -1, BOTTOM = 1}
+var placement : int = Placement.NONE
+
+var anchor : Vector2 = Vector2.ZERO setget , get_anchor
+
+func get_anchor() -> Vector2:
+	var x : float = position.x
+	var y : float = position.y + x / tan(PI / 4) * placement
+	
+	return Vector2(x, y)
+
 func _physics_process(delta : float):
 	process_motion()
 	motion = move_and_slide(motion)

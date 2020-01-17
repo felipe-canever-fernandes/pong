@@ -24,6 +24,7 @@ margin_bottom = 320.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="Walls" type="StaticBody2D" parent="."]
+editor/display_folded = true
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true

@@ -50,9 +50,11 @@ func instantiatePaddles() -> void:
 		
 	paddles[0].position.x = get_viewport().size.x / 4
 	paddles[0].position.y = paddles[0].size.y
+	paddles[0].placement = paddles[0].Placement.TOP
 	
 	paddles[1].position.x = get_viewport().size.x / 4
 	paddles[1].position.y = get_viewport().size.y / 2 - paddles[1].size.y
+	paddles[1].placement = paddles[1].Placement.BOTTOM
 
 func instantiatePaddle(Paddle : PackedScene) -> Node:
 	var paddle : Node = Paddle.instance()
@@ -75,20 +77,8 @@ func draw_dotted_line(y : float, index : int, flip_y : bool) -> void:
 
 func _on_Ball_body_entered(body : PhysicsBody2D) -> void:
 	if body.is_in_group("Paddles"):
-		var distance : float = abs(ball.position.x - body.position.x)
-		var half_width : float = body.size.x / 2
-		
-		var ratio : float =  distance / half_width;
-		
-		if body.motion.length() > 0:
-			ball.maximum_speed = lerp(ball.initial_speed, ball.initial_speed * 1.5, ratio)
-		
-		var angle : float = lerp(0, -PI / 4 * ball.direction, ratio)
-		
-		angle += PI / 2
-		angle *= sign(ball.linear_velocity.y)
-		
-		ball.angle = angle
+		var direction : Vector2 = (ball.position - body.anchor).normalized()
+		ball.linear_velocity = ball.maximum_speed * direction
 	
 func end() -> void:
 	get_tree().change_scene(main_menu)
