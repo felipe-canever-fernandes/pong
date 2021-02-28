@@ -2,7 +2,7 @@
 
 The classic game Pong, where two opponents - the player and the computer - use paddles to hit a ball back and forth.
 
-I've only tryied making this game because my friend Benjamin nagged me about it until I made it. :)
+I've only tried making this game because my friend Benjamin nagged me about it until I made it. :)
 
 <p align="center">
 	<img src="https://i.imgur.com/j2v3KOn.png" alt="Pong">
