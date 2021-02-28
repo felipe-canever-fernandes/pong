@@ -16,6 +16,8 @@ This game was made in the [Godot Engine](https://godotengine.org/), a "2D and 3D
 	<img src="https://i.imgur.com/ng0K0VS.png" alt="Godot">
 </p>
 
+<!--
+
 ## Instructions
 
 ### Launching the Game
@@ -25,6 +27,8 @@ To start playing the game, download the binary release, run ```pong.exe``` and m
 <p align="center">
 	<img src="https://i.imgur.com/ByYQBrc.png" alt="Main Menu">
 </p>
+
+-->
 
 ## Usage
 
