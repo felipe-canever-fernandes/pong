@@ -1,8 +1,8 @@
-key,en_US
-menu_play,Play
-menu_about,About
-menu_quit,Quit
-about_text,{title} {version}\n\nby\n{author}\n\nusing\nGodot Engine
-about_main_menu,Main Menu
-player,Player
-cpu,CPU
+key,en_US,pt_BR
+menu_play,Play,Jogar
+menu_about,About,Sobre
+menu_quit,Quit,Sair
+about_text,{title} {version}\n\nby\n{author}\n\nusing\nGodot Engine,{title} {version}\n\npor\n{author}\n\nusando\nGodot Engine
+about_main_menu,Main Menu,Menu Principal
+player,Player,Jogador
+cpu,CPU,Computador

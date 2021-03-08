@@ -59,7 +59,7 @@ texture={
 
 [locale]
 
-translations=PoolStringArray( "res://translations/strings.en_US.translation" )
+translations=PoolStringArray( "res://translations/strings.en_US.translation", "res://translations/strings.pt_BR.translation" )
 
 [rendering]
 
