@@ -46,5 +46,5 @@ valign = 1
 margin_top = 153.0
 margin_right = 126.0
 margin_bottom = 173.0
-text = "Main Menu"
+text = "about_main_menu"
 [connection signal="pressed" from="CenterContainer/VBoxContainer/MainMenuButton" to="." method="_on_MainMenuButton_pressed"]

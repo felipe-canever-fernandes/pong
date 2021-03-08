@@ -3,8 +3,8 @@
 [ext_resource path="res://scenes/paddle.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/cpu.gd" type="Script" id=2]
 
-[node name="Paddle" index="0" instance=ExtResource( 1 )]
+[node name="Paddle" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
 [node name="TypeLabel" parent="." index="2"]
-text = "CPU"
+text = "cpu"
