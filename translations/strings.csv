@@ -2,7 +2,7 @@ key,en_US
 menu_play,Play
 menu_about,About
 menu_quit,Quit
-about_text,PONG Alpha 1.0.0\n\nby\nFelipe Canever Fernandes\n\nusing\nGodot Engine
+about_text,{title} {version}\n\nby\n{author}\n\nusing\nGodot Engine
 about_main_menu,Main Menu
 player,Player
 cpu,CPU
