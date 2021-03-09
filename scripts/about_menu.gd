@@ -6,9 +6,9 @@ onready var about_label : Label = $CenterContainer/VBoxContainer/AboutLabel
 
 func _ready() -> void:
 	about_label.text = (tr("about_text") + "\n").format({
-		"title": Global.title,
-		"version": Global.version,
-		"author": Global.author
+		"title": Global.TITLE,
+		"version": Global.VERSION,
+		"author": Global.AUTHOR
 	})
 
 func _on_MainMenuButton_pressed():
